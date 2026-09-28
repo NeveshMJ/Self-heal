@@ -1,0 +1,42 @@
+/* Base document styles. Layout and components live in App.css. */
+
+:root {
+  --sans: Inter, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.45;
+  color: #172033;
+  background: #f6f8fc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  /* the dashboard reads left-to-right; no centred template text */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}
+
+code {
+  font-family: var(--mono);
+}

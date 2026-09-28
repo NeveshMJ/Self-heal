@@ -1,0 +1,58 @@
+# ---------- secrets / local config ----------
+# real .env files hold the DB password and JWT secret; commit the examples only
+.env
+.env.*
+!.env.example
+*.local
+
+# ---------- Python (backend, ml, db, selfheal) ----------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---------- Node / Vite (frontend) ----------
+node_modules/
+dist/
+dist-ssr/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- model weights ----------
+# t5-ask-more.pt is ~240 MB (over GitHub's 100 MB limit): share it separately
+# and place it in BNP-Chennai-team-08-integrated/backend/models/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+
+# ---------- data archives ----------
+# the unzipped knowledge base in data/raw is committed; the zips duplicate it
+*.zip
+
+# ---------- local databases / logs ----------
+*.db
+*.sqlite
+*.sqlite3
+*.log
+logs/
+
+# ---------- OS / editor ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.suo

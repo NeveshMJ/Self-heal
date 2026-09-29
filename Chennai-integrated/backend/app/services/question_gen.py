@@ -99,8 +99,13 @@ def _t5_questions(complaint, title, body) -> list[str]:
 
     questions = []
     for seq in out:
-        q = _clean(_tokenizer.decode(seq, skip_special_tokens=True))
-        # the model echoes the input when it has nothing to ask; drop that
+        raw = _tokenizer.decode(seq, skip_special_tokens=True).strip()
+        # the model sometimes echoes the complaint, or copies an article
+        # bullet ("- Document the action ..."), instead of asking: only keep
+        # output that is itself a question
+        if raw.startswith(("-", "*", "•")) or not raw.endswith("?"):
+            continue
+        q = _clean(raw)
         if len(q) > 12 and q.lower().rstrip("?") not in (complaint or "").lower():
             questions.append(q)
     return questions

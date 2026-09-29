@@ -29,7 +29,7 @@ pnpm-debug.log*
 
 # ---------- model weights ----------
 # t5-ask-more.pt is ~240 MB (over GitHub's 100 MB limit): share it separately
-# and place it in BNP-Chennai-team-08-integrated/backend/models/
+# and place it in Chennai-integrated/backend/models/
 *.pt
 *.pth
 *.bin
